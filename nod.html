@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BRR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é</title>
+    <style>
+        body {
+            background: rgb(68, 140, 199);
+            color: #fff;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando DocumentObjectModel</h1>
+    <input type="text" name="city" id="city">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">Olá!</div>
+
+    <script>
+        function verificar() {
+            var pais = window.document.querySelector('input#city').val
+            var res = window.document.querySelector('div#res').val
+            let city = pais.toString()
+            // Funções
+            console.log('Enter')
+            if (pais == city) {
+                console.log(res)
+                res.innerText = 'Você é Brasileiro(a)!'
+            } else {
+                res.innerText = 'Você é Estrangeiro(a)!'
+            }
+        }
+    </script>
+</body>
+</html>
