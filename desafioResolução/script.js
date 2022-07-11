@@ -3,9 +3,24 @@ let lista = document.querySelector('select#flista')
 let res = document.querySelector('div#res')
 let valores = []  
 
+function isNumero(){
+    if (Number(n) >= 1 && Number(n) <= 100) {
+        return true
+    } else {
+        return false
+    }
+}
+
+function inLista(n, l) {
+    if (l.indexOf(Number(n)) != -1) {
+        return true
+    } else {
+        return false
+    }
+}
 function adicionar() {
 
-    if (num.value.length == 0) {
+    if (num.value) {
         alert('Insira um numéro válido!')
     } else {
         let numeroInput = Number(num.value)
