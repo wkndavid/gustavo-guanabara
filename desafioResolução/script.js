@@ -1,9 +1,9 @@
 let num = document.querySelector('input#fnum')
 let lista = document.querySelector('select#flista')
 let res = document.querySelector('div#res')
-let valores = []  
+let valores = []  // análise de dados...
 
-function isNumero(){
+function isNumero(n){
     if (Number(n) >= 1 && Number(n) <= 100) {
         return true
     } else {
@@ -20,21 +20,18 @@ function inLista(n, l) {
 }
 function adicionar() {
 
-    if (num.value) {
-        alert('Insira um numéro válido!')
+    if (isNumero(num.value) && !inLista(num.value, valores)) {
+        valores.push(Number(num.value))
+        let item = document.createElement('option')
+        item.text = `Valor ${num.value} adicionado.`
+        lista.appendChild(item)
     } else {
-        let numeroInput = Number(num.value)
-        let count = 1
-        tabela.innerHTML = ''
-        while (count <= 1) {
-            let item = document.createElement('option')
-            item.text = `Valor ${numeroInput} adicionado.`
-            item.value = `tab${count}`
-            tabela.appendChild(item)
-            count++
-        }
+        window.alert('Valor inválido ou já encontrado na lista.')
     }
 }
+
+
+
 function finalizar() {
     alert('onclick funcionando')
 }
